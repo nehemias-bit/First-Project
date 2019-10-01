@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+}
+
+header {
+  background-color: red;
+  height: 100px;
+}
+
+#events-div {
+  height: 400px;
+  background-color: aquamarine;
+}
