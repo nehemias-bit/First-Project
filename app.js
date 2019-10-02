@@ -25,12 +25,13 @@ const events = (obj) => {
     let title = element.title;
     let typeOfEvent = element.types[0];
     let location = element.location;
-    eventList.innerHTML = `<p> Start date: ${datesStart}
-  <br>End date: ${dateEnd}<br>It will be a: ${category}
-  <br>Your contact for this event is: ${contactName}
-  <br>The contact's phone number is: ${contactTelephoneNumber}<br>
-  Event will start at: ${timeStart}<br> Event will end at: ${timeEnd}<br>
-  The event is: ${title}<br> It is a: ${typeOfEvent}<br> Location: ${location}</p>`;
+    eventList.innerHTML = `<p id="event-title">${title}</p>
+  <p id="start-date"><span>Start date</span>: ${datesStart}</p><p id="end-date"><span>End date</span>: ${dateEnd}</p>
+  <p id="time-start"><span>Event will start at</span>: ${timeStart}</p>
+  <p id="time-end"><span>Event will end at</span>: ${timeEnd}</p>
+  <p id="contact-name"><span>Your contact for this event is</span>: ${contactName}</p> 
+  <p id="contact-telephone"><span>The contact's phone number is</span>: ${contactTelephoneNumber}</p>
+  <p id="event-type"><span>The event is</span>: ${typeOfEvent}</p><p id="category"><span> It will be a</span>: ${category}</p><p id="location"><span> Location</span>: ${location}</p>`;
     eventList.setAttribute('id', `event-${index}`);
     if (index === 0) {
       eventList.setAttribute("class", "show");
@@ -40,7 +41,6 @@ const events = (obj) => {
     }
     eventsField.append(eventList);
   });
-  // console.log(dataArr);
 }
 
 
@@ -74,22 +74,16 @@ const allParks = (obj) => {
     let parkName = element.fullName;
     let description = element.description;
     let images = [];
+    let parkUrl = element.url;
+    console.log(parkUrl);
     element.images.forEach((image) => {
       images.push(image.url);
-      if (!image) {
-        image.push("No more")
-      }
     });
     let individualPark = document.createElement('div');
-    individualPark.innerHTML = `<p>${parkName}</p><p>${description}</p><img id='park-img' src='${images[0]}'>
-    <img id='park-img' src='${images[1]}'><img id='park-img' src='${images[2]}'><img id='park-img' src='${images[3]}'>`;
+    individualPark.innerHTML = `<h1>${parkName}</h1><p>${description}</p><img id='park-img' src='${images[0]}'>
+    <img id='park-img' src='${images[1]}'><img id='park-img' src='${images[2]}'><img id='park-img' src='${images[3]}'><a href="${parkUrl}">${parkName}</a>`;
     parksDiv.append(individualPark);
   })
-  // let parkName = obj.data.data[0].fullName;
-  // let description = obj.data.data[0].description;
-  // let individualPark = document.createElement('div');
-  // individualPark.innerHTML = `<p>${parkName}</p><p>${description}</p>`;
-  // parksDiv.append(individualPark);
 }
 
 

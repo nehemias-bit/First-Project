@@ -15,8 +15,9 @@ header {
   background-size: 100% 100%;
   text-align: center;
   display: grid;
-  grid-template-columns: 330px 330px 344px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 60px 250px 48px;
+  grid-template-areas: '. showcase showcase .';
   align-items: center;
   justify-content: center;
 }
@@ -60,7 +61,8 @@ header button:hover {
 }
 
 section h1 {
-  grid-column: 2;
+  grid-area: showcase;
+  /* grid-column: 2; */
   color: #F6A706;
   text-shadow: 1px 1px black;
   font-family: 'Montserrat', sans-serif;
@@ -76,7 +78,8 @@ section h1 {
   outline: none;
   width: 40px;
   height: 40px;
-  grid-column: 3;
+  margin-right: 140px;
+  grid-column: 4;
   justify-self: end;
   grid-row: 2;
 }
@@ -92,6 +95,7 @@ section h1 {
   border-radius: 20px;
   background-image: linear-gradient(to right, rgba(255,255,255,.5), rgba(255,255,255,.1));
   outline: none;
+  margin-left: 150px;
   width: 40px;
   height: 40px;
   grid-row: 2;
@@ -107,19 +111,116 @@ section h1 {
 }
 
 .show {
-  grid-column: 2;
+  grid-area: showcase;
+  /* grid-column: 2; */
   grid-row: 2;
   font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
   text-align: left;
-  background-image: linear-gradient(to right, rgba(255,255,255,.5), rgba(255,255,255,.1));
+  background-image: linear-gradient(to top, rgba(255,255,255,.5), rgba(255,255,255,0));
   border-radius: 10px;
   margin-top: 120px;
+  margin-left: 70px;
+  width: 535px;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+#event-title {
+  background-color: rgba(246,167,6,.5);
+  height: 45px;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+  padding-top: 15px;
+}
+
+#start-date {
+  margin: 0px;
+}
+
+#end-date {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#time-start {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#time-end {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#contact-name {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#contact-telephone {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#event-type {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#category {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#location {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+span {
+  font-weight: bold;
+}
+
+#parks {
+  height: 800px;
+}
+
+#parks h1 {
+  margin: 0 auto;
+  text-align: center;
+  color: #F6A706;
+  text-shadow: 1px 1px black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  /* background-color: rgba(64,119,186,.5); */
+  width: 500px;
+}
+
+#parks div {
+  background-color: white;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+
+}
+
+#parks img {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
 }
 
 #park-img {
   width: 100px;
   height: 100px;
 }
+
+
 
 @media only screen and (max-width: 375px) {
   #events-section {
