@@ -1,5 +1,7 @@
-body {
+body,html {
   margin: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 header {
@@ -9,15 +11,17 @@ header {
 }
 
 #events-section {
-  height: 450px;
+  height: 71vh;
   background-image: url("http://static.gigapan.com/gigapans0/85224/images/85224-1115x360.jpg");
   background-size: cover;
-  background-size: 100% 100%;
   text-align: center;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 60px 250px 48px;
-  grid-template-areas: '. showcase showcase .';
+  grid-template-areas: 
+  '. title title .'
+  'prev showcase showcase next'
+  '. . . .';
   align-items: center;
   justify-content: center;
 }
@@ -60,48 +64,51 @@ header button {
 
 header button:hover {
   background-color: rgba(246,167,6,.8);
-  /* box-shadow: 2px 2px; */
   border: 2px solid black;
 }
 
 section h1 {
-  grid-area: showcase;
-  /* grid-column: 2; */
+  grid-area: title;
   color: #F6A706;
   text-shadow: 1px 1px black;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 50px;
+  justify-self: center;
 }
 
 #next-event-button {
   font-size: 30px;
   font-weight: bold;
   border-radius: 20px;
-  background-image: linear-gradient(to right, rgba(255,255,255,.5), rgba(255,255,255,.1));
+  background: linear-gradient(to right, rgba(255,255,255,.5), rgba(255,255,255,.1));
   outline: none;
   width: 40px;
   height: 40px;
-  margin-right: 140px;
-  grid-column: 4;
-  justify-self: end;
-  grid-row: 2;
+  margin-right: 149px;
+  grid-area: next;
+  justify-self: center;
+  border: 0px;
+  padding-left: 5px;
 }
 
 #next-event-button:hover {
-  background-image: linear-gradient(to right, rgba(246,167,6,.5), rgba(246,167,6,.1));
+  background: linear-gradient(to right, rgba(246,167,6,.5), rgba(246,167,6,.1));
 }
 
 #previous-event-button {
   font-size: 30px;
   font-weight: bold;
   border-radius: 20px;
-  background-image: linear-gradient(to right, rgba(255,255,255,.5), rgba(255,255,255,.1));
+  background: linear-gradient(to right, rgba(255,255,255,.5), rgba(255,255,255,.1));
   outline: none;
   margin-left: 150px;
   width: 40px;
   height: 40px;
-  grid-row: 2;
+  grid-area: prev;
+  justify-self: center;
+  border: 0px;
+  padding-right: 5px;
 }
 
 #previous-event-button:hover {
@@ -114,12 +121,10 @@ section h1 {
 
 .show {
   grid-area: showcase;
-  /* grid-column: 2; */
-  grid-row: 2;
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   text-align: left;
-  background-image: linear-gradient(to top, rgba(255,255,255,.5), rgba(255,255,255,0));
+  background: linear-gradient(to top, rgba(255,255,255,.9), rgba(255,255,255,.5));
   border-radius: 10px;
   margin-top: 120px;
   margin-left: 70px;
@@ -192,12 +197,10 @@ span {
 #parks h1 {
   margin: 0 auto;
   text-align: center;
-  color: #F6A706;
   text-shadow: 1px 1px black;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 30px;
-  /* background-color: rgba(64,119,186,.5); */
   width: 500px;
   grid-area: title;
 }
@@ -205,20 +208,30 @@ span {
 #parks div {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 40% 60%;
   grid-template-areas: 
-    ". descrip descrip descrip"
-    "title descrip descrip descrip"
-    "link . one two "
-    ". . three four";
-  height: 700px;
+    ". descrip descrip"
+    "title descrip descrip"
+    "link one two "
+    "three four two";
+  height: 489px;
+}
+
+#img-sec {
+  grid-auto-columns: 1fr 1fr;
+  grid-template-rows: 200px 200px;
+  grid-row-gap: 16px;
+  display: grid;
+  grid-template-areas: 'one two' 'three four';
+  margin-top: 47px;
+  grid-column-gap: 16px;
 }
 
 #park-descrip {
   grid-area: descrip;
   line-height: 26px;
   font-family: 'Montserrat', sans-serif;
-  margin-top: 94px;
+  margin-top: 52px;
 }
 
 #park-links {
@@ -229,59 +242,60 @@ span {
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   color: black;
+  text-decoration: underline;
 }
 
 #park-links:hover {
-  color: #F6A706;
+  color: white;
 }
 
 #park-img-one {
   grid-area: one;
   width: 263px;
   height: 200px;
-  margin-right: 50px;
-  justify-self: start;
   border-radius: 5px;
-  box-shadow: 5px 5px;
+  box-shadow: 2px 2px;
+  align-self: center;
+  justify-self: right;
 }
 
 #park-img-two {
   grid-area: two;
   width: 263px;
   height: 200px;
-  margin-right: 50px;
   border-radius: 5px;
-  box-shadow: 5px 5px;
+  box-shadow: 2px 2px;
+  align-self: center;
 }
 
 #park-img-three {
   grid-area: three;
   width: 263px;
   height: 200px;
-  margin-top: 73px;
-  margin-right: 50px;
-  justify-self: start;
+  justify-self: right;
   border-radius: 5px;
-  box-shadow: 5px 5px;
+  box-shadow: 2px 2px;
 }
 
 #park-img-four {
   grid-area: four;
   width: 263px;
   height: 200px;
-  margin-top: 73px;
-  margin-right: 50px;
   border-radius: 5px;
-  box-shadow: 5px 5px;
+  box-shadow: 2px 2px;
 }
 
 footer {
-  background-color:  rgba(246,167,6,.5);
-  height: 105px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  background-color: white;
+  height: 110px;
   font-family: 'Montserrat', sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: 
+  '. back back .'
+  '. . . .'
+  '. git in .';
 }
 
 footer img {
@@ -289,50 +303,159 @@ footer img {
   height: 20px;
 }
 
-footer a {
-  text-decoration: none;
-  color: black;
-  padding-left: 10px;
+#linked-in {
+  grid-area: in;
+  justify-self: center;
 }
 
-footer a:hover {
+#go-up {
+  grid-area: back;
+  color: black;
+  justify-self: center;
+}
+
+#git {
+  grid-area: git;
+  justify-self: center;
+}
+
+#go-up:hover {
   color: #4077BA;
 }
 
+
 @media only screen and (max-width: 375px) {
+
+  header h1 {
+    font-size: 24px;
+    padding: 0;
+    margin-top: 60px;
+    margin-right: 95px;
+  }
+
+  header button {
+    font-size: 16px;
+    width: 65px;
+    height: 31px;
+    margin-right: 7px;
+    margin-top: 58px;
+    padding-left: 3px;
+  }
+
+  header input {
+    font-size: 16px;
+    width: 53px;
+    height: 28px; 
+    margin-top: 59px;
+    border-radius: 5px;
+  }
+
   #events-section {
-    height: 201px;
-    background-color: aquamarine;
+    height: 450px;
+    background-image: url("http://static.gigapan.com/gigapans0/85224/images/85224-1115x360.jpg");
+    background-size: cover;
     text-align: center;
     display: grid;
-    grid-template-columns: 15px 335px 15px;
-    grid-template-rows: 50px 100px 50px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 60px 250px 48px;
+    grid-template-areas: 
+    'title title .'
+    'prev showcase next'
+    '. . .';
     align-items: center;
     justify-content: center;
-    font-size: 10px;
+  }
+
+  .show {
+    grid-area: showcase;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    text-align: left;
+    background: linear-gradient(to top, rgba(255,255,255,.9), rgba(255,255,255,.5));
+    border-radius: 10px;
+    margin-left: 35px;
+    margin-right: 28px;
+    width: 253px;
+    overflow-y: scroll;
+    height: 100%;
+  }
+
+  section h1 {
+    font-size: 24px;
+    grid-area: title;
+    padding-right: 4px;
   }
 
   #next-event-button {
-    font-size: 12px;
-    font-weight: bold;
-    border-radius: 20px;
-    background-color: orange;
-    outline: none;
-    width: 20px;
+    grid-area: next;
+    font-size: 15px;
     height: 20px;
-    grid-column: 3;
-    justify-self: end;
-    grid-row: 2;
+    width: 20px;
   }
 
   #previous-event-button {
-    font-size: 12px;
-    font-weight: bold;
-    border-radius: 20px;
-    background-color: orange;
-    outline: none;
-    width: 20px;
+    grid-area: prev;
+    font-size: 15px;
     height: 20px;
-    grid-row: 2;
+    width: 20px;
   }
+
+  #parks div {
+    display: block;
+    height: auto;
+  }
+
+  #parks h1 {
+    font-size: 18px;
+    width: 282px;
+  }
+
+  #park-descrip {
+    margin-top: 21px;
+    width: 362px;
+  }
+
+  #park-links {
+    padding-right: 45px;
+    justify-self: center;
+  }
+
+  #park-img-one {
+    width: 100px;
+    height: 100px;
+    margin-right: 0px;
+  }
+  
+  #park-img-two {
+    width: 100px;
+    height: 100px;
+    justify-self: center;
+  }
+  
+  #park-img-three {
+    width: 100px;
+    height: 100px;
+    margin-top: 0px;
+    margin-right: 0px;
+  }
+  
+  #park-img-four {
+    width: 100px;
+    height: 100px;
+    margin-top: 0px;
+  }
+
+  #img-sec {
+    margin-top: 47px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #img-sec img {
+    align-self: center;
+    justify-self: center;
+    width: 90%;
+    height: 90%;
+  }
+
 }

@@ -80,8 +80,8 @@ const allParks = (obj) => {
       images.push(image.url);
     });
     let individualPark = document.createElement('div');
-    individualPark.innerHTML = `<h1>${parkName}</h1><p id="park-descrip">${description}</p><img id='park-img-one' src='${images[0]}'>
-    <img id='park-img-two' src='${images[1]}'><img id='park-img-three' src='${images[2]}'><img id='park-img-four' src='${images[3]}'><a id="park-links" href="${parkUrl}">${parkName}</a>`;
+    individualPark.innerHTML = `<section id="title-sec"><h1>${parkName}</h1><p id="park-descrip">${description}</p><a id="park-links" href="${parkUrl}" target="_blank">Go to site</a></section><section id="img-sec"><img id='park-img-one' src='${images[0]}'>
+    <img id='park-img-two' src='${images[1]}'><img id='park-img-three' src='${images[2]}'><img id='park-img-four' src='${images[3]}'></section>`;
     parksDiv.append(individualPark);
   })
 }

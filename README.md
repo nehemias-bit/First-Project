@@ -1,22 +1,18 @@
-**THE TIME MACHINE**
+#New York Park Event's
 --------------------------------------
-**Project Purpose:** This application will use a map API to  allow the user to search for a specific location. The user will then be able to enter a date using the mm/dd/yyyy format to request images of the searched location.
+**Project Purpose**: This application will display event's happening in different parks within New York state according to the National Parks Service API. Additionally, it will allow you to search for parks in any state using their two letter abbreviation. The search will display six parks.
 
 **API's In Use:** 
 
-* IP Location 
-* Nasa/Earth
-* Bing Maps
+* National Park Service
 
 
 **Features:**
 
-* GPS map covers the entire width and height of the page.
-* Input field for address search paired with a search button.
-* Drop down input field for desired date paired with a serch button.
-* Image or a collection of images displays after address and date input field is given.
-* User may also be able to drop a pin on the map and request images based off of the lattitude and longitude given by the map.
+* Event's currently happening in different New York parks.
+* Gives user the ability to search for parks in any state. It provides the user with six parks with links to each parks page.
 
 **Stretch Goals:**
 
-* Incorporate pin drop feature if not able to at first. 
+* The app currently forces the api to give it four images for each park even if they only have three. I need to use javascript to prevent that from happening.
+* I need to add animation to the event's section so that the 'next event' functionality performs more smoothly.
