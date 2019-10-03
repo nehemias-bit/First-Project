@@ -43,6 +43,7 @@ header input {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   border-radius: 10px;
+  font-size: 16px;
 }
 
 header button {
@@ -53,11 +54,14 @@ header button {
   outline: none;
   font-family: 'Montserrat', sans-serif;
   border-radius: 5px;
+  font-size: 16px;
+  border: 2px solid #4077BA;
 }
 
 header button:hover {
-  background-color: #F6A706;
-  box-shadow: 2px 2px;
+  background-color: rgba(246,167,6,.8);
+  /* box-shadow: 2px 2px; */
+  border: 2px solid black;
 }
 
 section h1 {
@@ -85,8 +89,7 @@ section h1 {
 }
 
 #next-event-button:hover {
-  background-color: #F6A706;
-  box-shadow: 1px 1px;
+  background-image: linear-gradient(to right, rgba(246,167,6,.5), rgba(246,167,6,.1));
 }
 
 #previous-event-button {
@@ -102,8 +105,7 @@ section h1 {
 }
 
 #previous-event-button:hover {
-  background-color: #F6A706;
-  box-shadow: 1px 1px;
+  background-image: linear-gradient(to left, rgba(246,167,6,.5), rgba(246,167,6,.1));
 }
 
 .hide {
@@ -132,7 +134,7 @@ section h1 {
   font-size: 20px;
   text-align: center;
   margin-bottom: 10px;
-  padding-top: 15px;
+  margin-top: 0px;
 }
 
 #start-date {
@@ -184,7 +186,7 @@ span {
 }
 
 #parks {
-  height: 800px;
+  background-color: rgba(64,119,186,.5);
 }
 
 #parks h1 {
@@ -197,30 +199,105 @@ span {
   font-size: 30px;
   /* background-color: rgba(64,119,186,.5); */
   width: 500px;
+  grid-area: title;
 }
 
 #parks div {
-  background-color: white;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: 
+    ". descrip descrip descrip"
+    "title descrip descrip descrip"
+    "link . one two "
+    ". . three four";
+  height: 700px;
 }
 
-
+#park-descrip {
+  grid-area: descrip;
+  line-height: 26px;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 94px;
 }
 
-#parks img {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto;
+#park-links {
+  grid-area: link;
+  justify-self: center;
+  align-self: center;
+  padding-right: 20px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  color: black;
 }
 
-#park-img {
-  width: 100px;
-  height: 100px;
+#park-links:hover {
+  color: #F6A706;
 }
 
+#park-img-one {
+  grid-area: one;
+  width: 263px;
+  height: 200px;
+  margin-right: 50px;
+  justify-self: start;
+  border-radius: 5px;
+  box-shadow: 5px 5px;
+}
 
+#park-img-two {
+  grid-area: two;
+  width: 263px;
+  height: 200px;
+  margin-right: 50px;
+  border-radius: 5px;
+  box-shadow: 5px 5px;
+}
+
+#park-img-three {
+  grid-area: three;
+  width: 263px;
+  height: 200px;
+  margin-top: 73px;
+  margin-right: 50px;
+  justify-self: start;
+  border-radius: 5px;
+  box-shadow: 5px 5px;
+}
+
+#park-img-four {
+  grid-area: four;
+  width: 263px;
+  height: 200px;
+  margin-top: 73px;
+  margin-right: 50px;
+  border-radius: 5px;
+  box-shadow: 5px 5px;
+}
+
+footer {
+  background-color:  rgba(246,167,6,.5);
+  height: 105px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-family: 'Montserrat', sans-serif;
+}
+
+footer img {
+  width: 20px;
+  height: 20px;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+  padding-left: 10px;
+}
+
+footer a:hover {
+  color: #4077BA;
+}
 
 @media only screen and (max-width: 375px) {
   #events-section {
