@@ -59,7 +59,7 @@ header button {
   font-family: 'Montserrat', sans-serif;
   border-radius: 5px;
   font-size: 16px;
-  border: 2px solid #4077BA;
+  border: 3px solid grey;
 }
 
 header button:hover {
@@ -190,10 +190,6 @@ span {
   font-weight: bold;
 }
 
-#parks {
-  background-color: rgba(64,119,186,.5);
-}
-
 #parks h1 {
   margin: 0 auto;
   text-align: center;
@@ -225,6 +221,10 @@ span {
   grid-template-areas: 'one two' 'three four';
   margin-top: 47px;
   grid-column-gap: 16px;
+}
+
+#title-sec {
+  padding-left: 20px;
 }
 
 #park-descrip {
@@ -305,7 +305,8 @@ footer img {
 
 #linked-in {
   grid-area: in;
-  justify-self: center;
+  justify-self: start;
+  padding-left: 10px;
 }
 
 #go-up {
@@ -316,7 +317,7 @@ footer img {
 
 #git {
   grid-area: git;
-  justify-self: center;
+  justify-self: end;
 }
 
 #go-up:hover {
