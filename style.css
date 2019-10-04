@@ -38,6 +38,10 @@ header h1 {
   text-shadow: 1px 1px black;
 }
 
+#not-for-main {
+  display: none;
+}
+
 header input {
   height: 40px;
   width: 50px;
@@ -327,11 +331,28 @@ footer img {
 
 @media only screen and (max-width: 375px) {
 
-  header h1 {
+  #top {
+    display: block;
+  }
+
+  #for-media {
+    display: block;
     font-size: 24px;
+    text-align: left;
     padding: 0;
-    margin-top: 60px;
-    margin-right: 95px;
+    margin-right: 44px;
+    margin: 0;
+  }
+
+  #not-for-main {
+    font-size: 24px;
+    display: inline-block;
+    margin: 0;
+    padding: 0px 85px 0px 0px;
+  }
+
+  section h1 {
+    display: none;
   }
 
   header button {
@@ -339,7 +360,6 @@ footer img {
     width: 65px;
     height: 31px;
     margin-right: 7px;
-    margin-top: 58px;
     padding-left: 3px;
   }
 
@@ -347,7 +367,6 @@ footer img {
     font-size: 16px;
     width: 53px;
     height: 28px; 
-    margin-top: 59px;
     border-radius: 5px;
   }
 
@@ -360,7 +379,7 @@ footer img {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 60px 250px 48px;
     grid-template-areas: 
-    'title title .'
+    '. . .'
     'prev showcase next'
     '. . .';
     align-items: center;
@@ -379,12 +398,6 @@ footer img {
     width: 253px;
     overflow-y: scroll;
     height: 100%;
-  }
-
-  section h1 {
-    font-size: 24px;
-    grid-area: title;
-    padding-right: 4px;
   }
 
   #next-event-button {
@@ -458,5 +471,6 @@ footer img {
     width: 90%;
     height: 90%;
   }
+
 
 }
