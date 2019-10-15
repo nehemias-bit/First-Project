@@ -5,9 +5,25 @@ body,html {
 }
 
 header {
-  background-color: #4077BA;
+  /* background-color: #4077BA; */
+  background-color: black; 
   height: 100px;
   display: flex;
+}
+
+#header-button-sec {
+  height: 100%;
+  width: 238px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10px;
+}
+
+#header-button-sec p {
+  margin: 0;
+  font-size: 26px;
+  color: white;
 }
 
 #events-section {
@@ -27,14 +43,15 @@ header {
 }
 
 header h1 {
-  color: #F6A706;
+  /* color: #F6A706; */
+  color: white;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 50px;
   text-align: center;
   margin: 0 auto;
   margin-top: 20px;
-  padding-left: 200px;
+  padding-left: 183px;
   text-shadow: 1px 1px black;
 }
 
@@ -45,8 +62,6 @@ header h1 {
 header input {
   height: 40px;
   width: 50px;
-  margin-right: 10px;
-  margin-top: 30px;
   outline: none;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
@@ -57,8 +72,6 @@ header input {
 header button {
   height: 40px;
   width: 100px;
-  margin-right: 50px;
-  margin-top: 30px;
   outline: none;
   font-family: 'Montserrat', sans-serif;
   border-radius: 5px;
@@ -73,7 +86,8 @@ header button:hover {
 
 section h1 {
   grid-area: title;
-  color: #F6A706;
+  /* color: #F6A706; */
+  color: white;
   text-shadow: 1px 1px black;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
@@ -203,6 +217,7 @@ span {
   font-size: 30px;
   width: 500px;
   grid-area: title;
+  color: rgba(246,167,6,.8);
 }
 
 #parks div {
@@ -250,7 +265,7 @@ span {
 }
 
 #park-links:hover {
-  color: white;
+  color: rgba(246,167,6,.8);
 }
 
 #park-img-one {
@@ -325,7 +340,7 @@ footer img {
 }
 
 #go-up:hover {
-  color: #4077BA;
+  color: rgba(246,167,6,.8);
 }
 
 

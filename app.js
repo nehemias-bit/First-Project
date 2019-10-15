@@ -77,11 +77,17 @@ const allParks = (obj) => {
     let parkUrl = element.url;
     console.log(parkUrl);
     element.images.forEach((image) => {
-      images.push(image.url);
+        images.push(image.url);
     });
+    console.log(images)
     let individualPark = document.createElement('div');
     individualPark.innerHTML = `<section id="title-sec"><h1>${parkName}</h1><p id="park-descrip">${description}</p><a id="park-links" href="${parkUrl}" target="_blank">Go to site</a></section><section id="img-sec"><img id='park-img-one' src='${images[0]}' alt='park'>
     <img id='park-img-two' src='${images[1]}' alt='park'><img id='park-img-three' src='${images[2]}' alt='park'><img id='park-img-four' src='${images[3]}' alt='park'></section>`;
+
+    if (images.length < 4) {
+      individualPark.innerHTML = `<section id="title-sec"><h1>${parkName}</h1><p id="park-descrip">${description}</p><a id="park-links" href="${parkUrl}" target="_blank">Go to site</a></section><section id="img-sec"><img id='park-img-one' src='${images[0]}' alt='park'>
+    <img id='park-img-two' src='${images[1]}' alt='park'><img id='park-img-three' src='${images[2]}' alt='park'></section>`;
+    }
     parksDiv.append(individualPark);
   })
 }
