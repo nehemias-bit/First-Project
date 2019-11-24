@@ -344,19 +344,14 @@ footer img {
 }
 
 
-@media only screen and (max-width: 375px) {
-
-  #top {
-    display: block;
-  }
+@media only screen and (max-width: 600px) {
 
   #for-media {
     display: block;
     font-size: 24px;
-    text-align: left;
     padding: 0;
-    margin-right: 44px;
-    margin: 0;
+    width: 40%;
+    margin-top: 1px;
   }
 
   #not-for-main {
@@ -368,6 +363,19 @@ footer img {
 
   section h1 {
     display: none;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+  }
+
+  #header-button-sec {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: -30px;
   }
 
   header button {

@@ -1,8 +1,8 @@
-#New York Park Event's
+#Park Vision
 --------------------------------------
 **Project Purpose**: This application will display event's happening in different parks within New York state according to the National Parks Service API. Additionally, it will allow you to search for parks in any state and the search will display six parks.
 
-**Project Link:** [newyorkparks](http://newyorkparks.surge.sh)
+**Project Link:** [parkvision](http://parkvision.surge.sh)
 
 **Built with:** 
 
